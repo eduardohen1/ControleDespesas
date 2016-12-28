@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="LayoutPadrao">
+<head>
+	<title>Cadastro de despesa</title>	
+</head>
+
+<section layout:fragment="conteudo">
+	<form class="form-horizontal" method="post" th:action="@{/despesas}" th:object="${despesa}">		
+		<div layout:include="MensagemGeral"></div>
+		<div layout:include="MensagemErro"></div>
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="clearfix">
+					<h1 class="panel-title eh-titulo-panel">Nova despesa</h1>
+					<a class="btn btn-link eh-link-panel" th:href="@{/despesas}">Voltar listagem de despesas</a>
+				</div>
+			</div>			
+			<div class="panel-body">
+				<input type="hidden" th:field="*{codigo}"/>
+				<div class="form-group"  th:classappend="${#fields.hasErrors('descricao')} ? 'has-error'">
+					<label for="descricao" class="col-sm-2 control-label">Descrição</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" id="descricao" th:field="*{descricao}"/> <!--  name="descricao" /> retirou o name e colocou uma expressão thymeleaf para poder manter os valores enviados na requisição - objeto Titulo -->
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</form>
+</section>
+</html>
