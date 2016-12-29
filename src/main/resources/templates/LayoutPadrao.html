@@ -4,26 +4,41 @@
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta http-equiv="Contet-Type" content="text/html; charset=UTF-8" /> <!-- Meta para responsibilidade -->
-	<meta name="viewport" content="width=device-width" /><!-- Meta para responsibilidade -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" /><!-- Meta para responsibilidade -->
 	<title>Cobrança</title>
 	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" />
 	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
 	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap-datepicker.standalone.min.css}" />
+	<!-- Font Awesome -->
+	<link rel="stylesheet" type="text/css" th:href="@{/vendors/font-awesome/css/font-awesome.min.css}" />
+	<!-- iCheck -->
+	<link rel="stylesheet" type="text/css" th:href="@{/vendors/iCheck/skins/flat/green.css}" />
+	<!-- Custom theme style -->
+	<link rel="stylesheet" type="text/css" th:href="@{/css/custom.min.css}" />
 </head>
 
-<body>
+<body class="nav-md">
 	<header layout:include="Cabecalho"></header>
-	
+	<!-- 
 	<section layout:fragment="conteudo">
 		<p>Conteúdo principal</p>	
 	</section>
-	
+	-->
 <script th:src="@{/js/jquery-3.1.1.min.js}"></script>	
 <script th:src="@{/js/bootstrap.min.js}"></script>
 <script th:src="@{/js/cobranca.js}"></script>
 <script th:src="@{/js/bootstrap-datepicker.min.js}"></script>
 <script th:src="@{/js/bootstrap-datepicker.pt-BR.min.js}"></script>
 <script th:src="@{/js/jquery.maskMoney.min.js}"></script>
+<!-- Fastclick -->
+<script th:src="@{/vendors/fastclick/lib/fastclick.js}"></script>
+<!-- NProgress -->
+<script th:src="@{/vendors/nprogress/nprogress.js}"></script>
+<!-- bootstrap-progressbar -->
+<script th:src="@{/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js}"></script>
+<!-- Custom theme scripts -->
+<script th:src="@{/js/custom.min.js}"></script>
 </body>
 </html>
