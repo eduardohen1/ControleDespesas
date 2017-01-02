@@ -37,7 +37,7 @@ public class Despesa {
 	private String descricao;
 	
 	@NotNull(message= "Data da despesa é obrigatória")
-	@DateTimeFormat(pattern="dd/MM/yyyy'T'hh:mm:ss")	
+	@DateTimeFormat(pattern="dd/MM/yyyy")	
 	@Temporal(TemporalType.DATE)
 	private Date dataDespesa;
 	
@@ -68,13 +68,24 @@ public class Despesa {
                 referencedColumnName="codigo")})  
     private List<Parcela> parcelaList;
 	
-	private int codigoCartao;
+	private Long codigoCartao;
 	
-	public int getCodigoCartao() {
+	@NotEmpty
+	private Long codigoOperador;
+		
+	public Long getCodigoOperador() {
+		return codigoOperador;
+	}
+
+	public void setCodigoOperador(Long codigoOperador) {
+		this.codigoOperador = codigoOperador;
+	}
+
+	public Long getCodigoCartao() {
 		return codigoCartao;
 	}
 
-	public void setCodigoCartao(int codigoCartao) {		
+	public void setCodigoCartao(Long codigoCartao) {		
 		this.codigoCartao = codigoCartao;
 	}
 
